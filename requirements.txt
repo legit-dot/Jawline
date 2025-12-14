@@ -1,6 +1,5 @@
-flask
-mediapipe==0.10.13
+streamlit
+mediapipe
+opencv-python-headless
 requests
 numpy
-gunicorn
-opencv-python-headless
