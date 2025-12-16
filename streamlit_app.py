@@ -3,10 +3,41 @@ import google.generativeai as genai
 from PIL import Image
 import requests
 import io
+# --- CUSTOM CSS FOR STYLING ---
+st.markdown("""
+<style>
+/* 1. Title Styling */
+.stApp h1 {
+    color: #1E90FF; /* Primary blue for the title */
+    font-size: 2.5em;
+    border-bottom: 3px solid #1E90FF;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
 
+/* 2. Style the Info/Success/Warning Boxes */
+/* This targets the different alert/result boxes to make them stand out */
+div[data-testid="stAlert"] {
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1); /* Soft shadow */
+    font-size: 1.1em;
+}
+
+/* 3. Style the upload button for better visibility */
+div[data-testid="stFileUploader"] {
+    background-color: #f7f7f7;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+</style>
+""", unsafe_allow_html=True)
+# -----------------------------
 # --- PAGE SETUP ---
-st.set_page_config(page_title="AI Jawline Rater", page_icon="🤖")
-st.title("AI Jawline Rater 🤖")
+st.set_page_config(page_title="AI Jawline Rater", page_icon="")
+st.title("AI Jawline Rater ")
 st.write("Upload your photo and let the AI judge your jawline.")
 
 # --- GET SECRETS ---
